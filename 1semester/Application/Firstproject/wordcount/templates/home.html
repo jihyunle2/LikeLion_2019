@@ -1,0 +1,9 @@
+<h1>Wordcount Application</h1>
+
+<a href="{% url 'about' %}"> ABOUT </a>
+<!--link로 /about을 쓰면 path를 바꿨을 떄 안먹힘-->
+<form action="{% url 'result' %}"> <!--제출할 때 result로 제출한다는 뜻-->
+    <textarea cols="40" rows="10" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="COUNT!">
+</form>

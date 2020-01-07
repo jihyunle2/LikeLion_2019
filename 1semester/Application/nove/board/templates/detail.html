@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{%block content%}
+    {{post.title}}
+    {{post.pub_date}}
+    <img src= "{{post.image.url}}">
+    {{post.body}}
+{%endblock%}

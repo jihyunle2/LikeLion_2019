@@ -1,0 +1,31 @@
+<h1>This is detail page.</h1>
+
+<h2>{{details.title}}</h2>
+<p>{{details.pub_date}}</p>
+<p>{{details.body}}</p>
+<a href = "{% url 'delete' details.id %}"> delete </a>
+<a href ="{% url 'update' details.id %}">edit</a>
+<a href="{% url 'home' %}">home으로</a>
+
+<!--comment 보기-->
+<h2><strong>Comments</strong></h2>
+{% for comment in details.comments.all %}
+    <span>글 쓴 날짜</span> {{comment.created_date}}<br>
+    <span>글쓴이</span> {{comment.comment_author}}<br>
+    <span>내용</span> {{comment.comment_contents}}<br>
+
+    <a href="{% url 'comment_delete' details.id comment.id %}">delete</a> 
+
+{% empty %}
+    <p>No comments here yet</p>
+{%endfor%}
+
+<!--comment 쓰기-->
+<h2><strong>Create Comments</strong></h2>
+<form action="" method="POST">
+    {%csrf_token%}
+        <input type="text" name="comment_author" placeholder="작성자"><br>
+        <textarea name="comment_contents" cols="30" rows="10" placeholder="댓글내용"></textarea><br>
+        <button type="submit">등록</button>
+</form>
+

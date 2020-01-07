@@ -1,0 +1,17 @@
+<h1>Result</h1>
+
+<!--{% 장고 명령어-문법 {{ 장고 값을 사용할 때-->
+
+<h3> 당신이 입력한 텍스트는 {{ total }} 단어로 구성되어 있습니다.</h3>
+<br>
+<h3> 입력한 텍스트</h3>
+{{ fulltext }}
+<br>
+<h3>단어 카운트</h3>
+
+<!--   key      value-->
+{% for word, frequency in dictionary %}
+{{word}} - {{frequency}}
+<br>
+
+{%endfor%}

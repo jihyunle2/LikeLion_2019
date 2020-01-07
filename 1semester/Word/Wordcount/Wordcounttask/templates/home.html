@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Wordcount by JH</title>
+    
+    <!-- Google Fonts -->   
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}" >
+
+</head>
+<div class="container">
+    <h1>Wordcount Application</h1>
+
+    <a href="{% url 'about' %}"> <h3>ABOUT</h3> </a>
+</div>
+
+<div class="text">
+    <form action="{% url 'result' %}">
+        <textarea class="texta" name="fulltext"></textarea>
+        <br>
+        <div class="but"><button type="submit" class="btn"><p>COUNT!</p></button></div>
+    </form>
+</div>
+
+</html>

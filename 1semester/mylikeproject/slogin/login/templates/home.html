@@ -1,0 +1,19 @@
+<h1>HOME PAGE</h1>
+
+{% load socialaccount %}
+{% providers_media_js %}
+
+<a href="/accounts/signup">SIGN UP</a>
+<br>
+
+{% if user.is_authenticated %}
+<a href="/accounts/logout">LOGOUT</a>
+<br>
+
+{{user.username}} 님이 로그인 중
+
+{% else %}
+<a href="{% provider_login_url 'google' %}">google login</a>
+로그인이 필요합니다
+{%endif%}
+

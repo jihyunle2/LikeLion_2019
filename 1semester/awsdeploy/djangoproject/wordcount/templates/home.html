@@ -1,0 +1,25 @@
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h1,p{
+            color :#F7819F;
+            font-family: 'Poor Story', cursive;
+        }
+    </style>
+
+</head>
+
+
+<h1> <i class="fa fa-home"></i>안녕하세요, 반갑습니다. 여기에서 열심히 글자를 세세요. </h1>
+
+<p><a href="{%url 'about'%}">ABOUT</a></p>
+
+<p>
+<form action="{%url 'result'%}"><!-- 사용자에게 입력을 받는 form 태그를 작성을 해주고, 입력받은 것을 어디로 제출할것을 나타내주는게 action부분에 써져야 한다. -->
+    <textarea cols="40" rows="10" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="Count!">
+</form>
+</p>

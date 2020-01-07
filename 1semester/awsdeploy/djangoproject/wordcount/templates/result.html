@@ -1,0 +1,35 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h1{
+            color :#F7BE81;
+            font-family: 'Poor Story', cursive;
+        }
+        p{
+            color : black;
+            font-family: 'Poor Story', cursive;
+        }
+
+        h2{
+            color : #4000FF;
+            font-family: 'Poor Story', cursive;
+        }
+
+    </style>
+
+</head>
+
+<h1><i class="fa fa-bell"></i>당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다.</h1>
+
+<p><a href="{%url 'home' %}">다시 하기</a></p>
+<br>
+<h2>입력한 텍스트: </h2>
+<p>{{ full }}</p>
+
+<h2>단어 카운트 : </h2>
+{% for word, howmany in dictionary%}
+
+<p>{{word}} : {{howmany}}</p>
+<!-- <br> -->
+{%endfor%}<!--한번 수행할 때마다 닫는태그가 필요-->

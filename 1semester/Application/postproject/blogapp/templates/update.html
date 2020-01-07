@@ -1,0 +1,19 @@
+<div class="container">
+                               <!-- | 2번 게시물의 업데이트임을 명시함-->
+    <form action="{% url 'edit' updates.id %}" method="POST">
+        {% csrf_token %}
+        <h4>제목:</h4>
+        <input type="text" name="titleb" value={{updates.title}}>
+        <br>
+        <br>
+        <h4>내용:</h4>
+                                    <!--view             model-->
+        <textarea cols=40 rows=10 name="bodyb"> {{updates.body}} </textarea>
+        <br>
+        <br>
+        <input type="submit" value="제출하기">
+        
+    </form>
+    
+    
+    </div>
